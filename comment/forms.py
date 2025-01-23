@@ -1,10 +1,3 @@
-from django.contrib.auth.models import User
-from comment.models import Comment
-from django import forms
-
-class NewCommentForm(forms.ModelForm):
-    body = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Write comment'}), required=True)
-    
-    class Meta:
-        model = Comment
-        fields = ("body",)
+version https://git-lfs.github.com/spec/v1
+oid sha256:975112845a440669a3178a0630b12a18b6d94b5de16d1b78ec91a064dcb5b7bc
+size 339

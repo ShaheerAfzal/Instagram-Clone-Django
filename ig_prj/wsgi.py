@@ -1,16 +1,3 @@
-"""
-WSGI config for ig_prj project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
-"""
-
-import os
-
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ig_prj.settings')
-
-application = get_wsgi_application()
+version https://git-lfs.github.com/spec/v1
+oid sha256:5e571403940a44870e01e1b18ad39a38a4047373f3d977ae6d59ac30b475ba12
+size 389

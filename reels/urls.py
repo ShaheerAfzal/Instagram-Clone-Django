@@ -1,13 +1,3 @@
-from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
-from .views import *
-from . import views
-
-urlpatterns = [
-    path('<uuid:reel_id>/', ReelDetails.as_view(), name="reel-view"),
-    path('<uuid:reel_id>/delete', ReelDeleteView.as_view(), name="reel-del"),
-    path('', ReelListView.as_view(), name='reel-list'),
-    path('create/', ReelView.as_view(), name='reel-create'),
-    path('<uuid:reel_id>/like/', like, name='like-reel'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0cf35772bc683a6903347cb9ad5fdfdb4e904b6b4ee9b7ee3ad834b53f0a12d3
+size 572

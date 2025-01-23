@@ -1,15 +1,3 @@
-from django import forms
-from post.models import Post
-
-
-class NewPostform(forms.ModelForm):
-    # content = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=True)
-    
-    picture = forms.ImageField(required=True)
-    caption = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Caption'}), required=True)
-    is_close= forms.BooleanField(required=True)
-    tags = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Tags | Seperate with comma'}), required=True)
-
-    class Meta:
-        model = Post
-        fields = ['picture', 'caption', 'is_close', 'tags']
+version https://git-lfs.github.com/spec/v1
+oid sha256:328c0e84045df59b04873983e9a50d1193aa9b794d467d97c5fbedf6b8bedfd9
+size 653

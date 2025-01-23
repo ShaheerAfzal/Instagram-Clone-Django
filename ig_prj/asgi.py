@@ -1,16 +1,3 @@
-"""
-ASGI config for ig_prj project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/
-"""
-
-import os
-
-from django.core.asgi import get_asgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ig_prj.settings')
-
-application = get_asgi_application()
+version https://git-lfs.github.com/spec/v1
+oid sha256:b9f1ac74a30633b5b2800c924e9928098032dea7056fc4c4a46f13bb639dfdf2
+size 389
