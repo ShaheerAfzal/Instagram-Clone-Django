@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>All Reels</h2>
+    
+    <div class="reel-list">
+        {% for reel in reels %}
+            <div class="reel-item">
+                <a href="{% url 'reel-view' reel.reel_id %}">
+                    <img src="{{ reel.reel_cover.url }}" alt="Reel Cover" class="reel-cover">
+                    <p>{{ reel.reel_description|truncatechars:100 }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <style>
+        .reels-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .reel-item {
+            width: 200px;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .reel-item:hover {
+            transform: scale(1.05);
+        }
+
+        .reel-cover {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: var(--text-dark);
+        }
+    </style>
+{% endblock %}

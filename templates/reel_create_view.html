@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+
+  <style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    button .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    small {
+        display: block;
+        margin-top: 5px;
+        color: #999;
+    }
+  </style>
+
+  <div class="container">
+    <h2>Create a New Reel</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% comment %} <div class="form-group">
+        <label for="id_user">User</label>
+        {{ form.user }}
+      </div> {% endcomment %}
+
+      <div class="form-group">
+        <label for="id_reel_video">Reel Video</label>
+        {{ form.reel_video }}
+        <small class="form-text text-muted">Upload a .mp4 file</small>
+      </div>
+
+      <div class="form-group">
+        <label for="id_reel_cover">Reel Cover</label>
+        {{ form.reel_cover }}
+        <small class="form-text text-muted">Upload an image (png, jpg, jpeg)</small>
+      </div>
+
+      <div class="form-group">
+        <label for="id_reel_description">Description</label>
+        {{ form.reel_description }}
+      </div>
+      <div class="form-group">
+        <label for="id_is_close">Close Friends</label>
+        {{ form.is_close }}
+      </div>
+
+      <div class="form-group">
+        <label for="id_reel_tags">Tags</label>
+        {{ form.tags }}
+        {% comment %} <small class="form-text text-muted">Select or create tags</small> {% endcomment %}
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <img src="{% static 'assets1/icons/upload-icon.png' %}" alt="Upload Icon" class="icon"> Submit
+      </button>
+    </form>
+  </div>
+
+{% endblock %}
